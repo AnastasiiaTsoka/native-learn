@@ -19,7 +19,8 @@ const App = () => {
                   </View> 
                   <CustomButton
                       title='Continue with Email'
-                      handlePress={() => router.push('/(auth)/sign-in')}
+                      // handlePress={() => router.push('/(auth)/sign-in')}
+                      handlePress={() => router.push('/(tabs)/home')}
                       containerStyles="w-full mt-7"
                   />
               </View>

@@ -7,7 +7,6 @@ import { Link } from 'expo-router';
 
 const SignIn = () => {
     const [form,setForm] = useState({
-        user: '',
         email: '',
         password:''
     });
@@ -21,7 +20,7 @@ const SignIn = () => {
     return (
         <SafeAreaView className='bg-background h-full'>
             <ScrollView>
-                <View className='w-full h-full justify-center px-4 mt-6'>
+                <View className='w-full min-h-[75vh] justify-center px-4 mt-6'>
                     <Text className='text-2xl text-mainText mt-10 font-semibold'>Lon In to BYELingual</Text>
                     <FormField
                         title='Email'
