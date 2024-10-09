@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Pressable } from 'react-native';
 import React, { useState } from 'react';
 
 interface FormFieldProps {
@@ -29,11 +29,11 @@ const FormField = (props: FormFieldProps) => {
                   secureTextEntry={props.title === 'Password' && !showPassword}
               /> 
               {props.title === 'Password' && (
-                  <TouchableOpacity
+                  <Pressable
                       onPress={()=> setShowPassword(!showPassword)}
                   >
                       
-                  </TouchableOpacity>
+                  </Pressable>
               )}
           </View>
     </View>

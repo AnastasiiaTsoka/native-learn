@@ -1,6 +1,5 @@
-import { TouchableOpacity ,Text} from 'react-native';
+import { TouchableOpacity ,Text, Pressable} from 'react-native';
 import React from 'react';
-import { opacity } from 'react-native-reanimated/lib/typescript/Colors';
 
 interface CustomButtonProps {
     title: string,
@@ -12,9 +11,9 @@ interface CustomButtonProps {
 
 const CustomButton = (props:CustomButtonProps) => {
     return (
-        <TouchableOpacity
+        <Pressable
             onPress={props.handlePress}
-            activeOpacity={0.7}
+            // activeOpacity={0.7}
             className={`bg-secondary rounded-xl min-h-[62px] justify-center items-center
                  ${props.containerStyles}
                  ${props.isLoading ? 'opacity-50' : ''}`}
@@ -23,7 +22,7 @@ const CustomButton = (props:CustomButtonProps) => {
             <Text className={`text-background font-black text-lg ${props.textStyles}`}>
                 {props.title}
             </Text>
-        </TouchableOpacity>
+        </Pressable>
     )
 };
 

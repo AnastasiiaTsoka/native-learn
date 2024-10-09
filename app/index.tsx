@@ -7,15 +7,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomButton from '@/components/CustomButton';
 import { images } from '../constants/images';
 
+
 const App = () => {
   return (
     <SafeAreaView className='bg-background h-full'>
       <ScrollView contentContainerStyle={{ height: '100%' }}>
         <View className='w-full justify-center items-center min-h-[85vh] px-4'>
           <Image
-              // source={require('../assets/images/byelingual-logo.png')}
             source={images.logoBye}
-            className='w-[120px] h-[84px]'
+            style={{
+              width:260,
+              height:120
+            }}
             resizeMode='contain'
           />
           <View className='relative mt-5'>
@@ -31,7 +34,7 @@ const App = () => {
           />
         </View>
       </ScrollView>
-          <StatusBar backgroundColor='1A1A31' style='light'/>
+          <StatusBar backgroundColor='0d1639' style='light'/>
     </SafeAreaView>
   )
 }
