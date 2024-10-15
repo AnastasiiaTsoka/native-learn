@@ -8,20 +8,16 @@ interface CardProps {
 const Card = (props:CardProps) => {
     return (
         <View className='flex-col items-center px-4 mb-14'>
-            <View className='flex-row gap-3 items-start'>
-                <View className='justify-center items-center flex-row flex-1'>
-                    <View className='w-[46px] h-[46px] rounded-lg border border-secondary 
-                    justify-center items-center p-0.5'>
-
-                    </View>
-                    <View className='justify-center flex-1 ml-3 gap-y-1'>
-                        <Text className='text-mainText font-semibold text-sm'>
-                            Card title blsfgdfgfdf
-                        </Text>
-                    </View>
+            <View className='flex-row  space-x-2 justify-between items-center px-4 w-full'>
+                <View>
+                    <Text className='text-2xl font-semibold text-mainText'>Lessons</Text>
                 </View>
+                <View>
+                    <Text className='text-sm font-light text-secondaryText'>View All</Text>
+                </View>
+                
+
             </View>
-            <Text className='text-2xl text-mainText'>Card</Text>
         </View>
     )
 };

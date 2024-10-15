@@ -10,6 +10,7 @@ module.exports = {
         // secondary: '#0dd392',
         // secondary: '#b400ff',
         secondary: '#E46000',
+        primary:'#174655',
         // mainText: '#ADADAD',
         mainText: '#EBEBE4',
         // secondaryText:'#c2b8b2'
