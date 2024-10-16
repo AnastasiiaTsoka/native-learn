@@ -2,7 +2,7 @@ import { View, Text, Pressable } from 'react-native';
 import React from 'react';
 
 interface LessonItemProps{
-    lessonId: string,
+    lessonId: number,
     lessonTitle: string
 }
 
