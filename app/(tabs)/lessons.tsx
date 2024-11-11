@@ -6,7 +6,7 @@ import LessonsList from '@/components/Lessons/LessonsList';
 
 const Lessons = () => {
     return (
-        <SafeAreaView className='bg-background'>
+        <SafeAreaView className='bg-background h-full'>
             <View className='my-6 px-4 '>
                 <Text className='text-primary text-3xl font-semibold'> Lessons</Text>
             </View>

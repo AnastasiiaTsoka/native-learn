@@ -16,21 +16,21 @@ const App = () => {
           <Image
             source={images.logoBye}
             style={{
-              width:260,
-              height:120
+              width:420,
+              height:260
             }}
             resizeMode='contain'
           />
           <View className='relative mt-5'>
-            <Text className='text-sm text-mainText font-bold text-center'>Discover Endless Possibilities with 
-                <Text className='text-1xl text-secondary font-bold text-center'> BYELingual</Text>
+            <Text className='text-sm text-secondaryText font-bold text-center'>Discover Endless Possibilities with 
+                <Text className='text-1xl text-primary font-bold text-center'> BYELingual</Text>
             </Text>
           </View> 
           <CustomButton
               title='Continue with Email'
               // handlePress={() => router.push('/(auth)/sign-in')}
               handlePress={() => router.push('/(tabs)/home')}
-              containerStyles="w-full mt-7"
+              containerStyles="w-full mt-20"
           />
         </View>
       </ScrollView>

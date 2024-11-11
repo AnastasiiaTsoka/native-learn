@@ -23,6 +23,7 @@ export default function TabLayout() {
         name="home"
         options={{
           title: 'Home',
+          tabBarLabelPosition:'below-icon',
           headerShown:false,
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
@@ -33,9 +34,10 @@ export default function TabLayout() {
         name="lessons"
         options={{
           title: 'Lessons',
+          tabBarLabelPosition:'below-icon',
           headerShown:false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'folder-open' : 'folder-open-outline'} color={color} />
           ),
         }}
       />
@@ -43,9 +45,15 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'Profile',
+          tabBarLabelPosition: 'below-icon',
+          tabBarLabelStyle: {
+            fontSize: 12,
+            // fontFamily: 'Georgia',
+            // fontWeight: 300, 
+          },
           headerShown:false,
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'person' : 'person-outline'} color={color} />
           ),
         }}
       />
