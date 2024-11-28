@@ -1,4 +1,4 @@
-import { View, Text, FlatList,Image } from 'react-native';
+import { View, Text, FlatList,Image, ScrollView } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { images } from '../../constants/images';
@@ -7,6 +7,7 @@ import LessonsList from '@/components/Lessons/LessonsList';
 const Lessons = () => {
     return (
         <SafeAreaView className='bg-background h-full'>
+            <ScrollView contentContainerStyle={{ height: '100%',backgroundColor:'#0d0e1c' }}>
             <View className='my-6 px-4 '>
                 <Text className='text-primary text-3xl font-semibold'> Lessons</Text>
             </View>
@@ -43,7 +44,7 @@ const Lessons = () => {
                 )}
             /> */}
 
-           
+         </ScrollView>  
        </SafeAreaView>
     )
 };

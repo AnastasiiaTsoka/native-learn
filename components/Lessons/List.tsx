@@ -8,7 +8,8 @@ export interface ListProps{
 export interface AlphabetProps{
     letter: string,
     transcription: string,
-    id:string
+    id: string,
+    sound: string,
 };
 
 export const List = [
@@ -22,13 +23,13 @@ export const List = [
 
 
 export const Alphabet = [
-    { letter: 'Aa', transcription: '/ei/', id: '1a' },
-    { letter: 'Bb', transcription: '/bi:/', id: '2b' },
-    { letter: 'Cc', transcription: '/si:/', id: '3c' },
-    { letter: 'Dd', transcription: '/di:/', id: '4d' },
-    { letter: 'Ee', transcription: '/i:/', id: '5e' },
-    { letter: 'Ff', transcription: '/ef/', id: '6f' },
-    { letter: 'Gg', transcription: '/dgi/', id: '7g' },
-    { letter: 'Hh', transcription: '/eit/', id: '8h' },
-    { letter: 'Ii', transcription: '/ai/', id: '9i' },
+    { letter: 'Aa', transcription: '/ei/', id: '1a',sound:'A' },
+    { letter: 'Bb', transcription: '/bi:/', id: '2b',sound:'B' },
+    { letter: 'Cc', transcription: '/si:/', id: '3c',sound:'C' },
+    { letter: 'Dd', transcription: '/di:/', id: '4d',sound:'D' },
+    { letter: 'Ee', transcription: '/i:/', id: '5e',sound:'E' },
+    { letter: 'Ff', transcription: '/ef/', id: '6f',sound:'F' },
+    { letter: 'Gg', transcription: '/dgi/', id: '7g',sound:'G' },
+    { letter: 'Hh', transcription: '/eit/', id: '8h' ,sound:'H'},
+    { letter: 'Ii', transcription: '/ai/', id: '9i',sound:'I' },
 ];

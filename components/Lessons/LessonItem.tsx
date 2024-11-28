@@ -16,7 +16,7 @@ const LessonItem = (props: LessonItemProps) => {
         <Pressable className='flex-row px-4 gap-3 items-center  '
             onPress={(lessonId) => router.push(`/lessonscategory/${lessonTitle}`)}
         >
-            <Text className='text-sm text-secondaryText'>{lessonId}</Text>
+            <Text className='text-lg text-mainText'>{lessonId}</Text>
             <Text className='text-2xl text-mainText'>{lessonTitle}</Text>
         </Pressable>
     )

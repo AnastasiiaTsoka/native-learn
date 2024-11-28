@@ -2,7 +2,7 @@ import { View, Text, TextInput, TouchableOpacity, Pressable,Alert} from 'react-n
 import React from 'react';
 import { router, usePathname } from 'expo-router';
 import { useState } from 'react';
-
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 interface SearcheInputProps {
     value?: string,
@@ -39,8 +39,8 @@ const SearcheInput = (props: SearcheInputProps) => {
                     }
                 }}
             >
-                <View className='w-[20px] h-[20px] bg-secondary'>
-
+                <View >
+                    <Ionicons name="search-outline" size={24} color="white" />
                 </View>
             </Pressable>
         </View>

@@ -11,7 +11,7 @@ import { images } from '../constants/images';
 const App = () => {
   return (
     <SafeAreaView className='bg-background h-full'>
-      <ScrollView contentContainerStyle={{ height: '100%' }}>
+      <ScrollView contentContainerStyle={{ height: '100%',backgroundColor:'#0d0e1c' }}>
         <View className='w-full justify-center items-center min-h-[85vh] px-4'>
           <Image
             source={images.logoBye}
@@ -34,7 +34,7 @@ const App = () => {
           />
         </View>
       </ScrollView>
-          <StatusBar backgroundColor='0d1639' style='light'/>
+          <StatusBar backgroundColor='#0d0e1c' style='light'/>
     </SafeAreaView>
   )
 }
