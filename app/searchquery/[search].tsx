@@ -1,11 +1,17 @@
-import { View, Text, SafeAreaView, ScrollView, ActivityIndicator, Pressable, Touchable, TouchableOpacity } from 'react-native';
+import {
+    View, Text, SafeAreaView, ScrollView, ActivityIndicator,
+    Pressable, Touchable, TouchableOpacity,Button
+} from 'react-native';
 import React, { useState, useRef } from 'react';
 import { useLocalSearchParams } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Audio } from 'expo-av';
 import { recordSpeech } from '@/functions/recordingSpeech';
 import { transcribSpeech } from '@/functions/transcribeSpeech';
-// import { useAudioRecorder, RecordingOptions, AudioModule, RecordingPresets } from 'expo-audio';
+import * as FileSystem from 'expo-file-system';
+import { Platform } from 'react-native';
+
+
 
 const Search = () => {
     const { search } = useLocalSearchParams();
@@ -14,12 +20,11 @@ const Search = () => {
     const [isTranscribing, setIsTranscribing] = useState(false);
     const audioRecordingRef = useRef(new Audio.Recording());
 
-    // const audioRecorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
 
     const startRecording = async () => {
         setIsRecording(true);
         await recordSpeech(audioRecordingRef);
-     };
+    };
 
     const stopRecording = async () => {
         setIsRecording(false);
@@ -32,8 +37,86 @@ const Search = () => {
         } finally {
             setIsTranscribing(false);
         }
-        
-     };
+    };
+
+
+    // const [recording, setRecording] = useState() as any;
+    // const [recordings, setRecordings] = useState([]) as any;
+
+    // const startRecording = async () => {
+    //     try {
+    //         const perm = await Audio.requestPermissionsAsync();
+    //         if (perm.status === 'granted') {
+    //             await Audio.setAudioModeAsync({
+    //                 allowsRecordingIOS: true,
+    //                 playsInSilentModeIOS: true,
+    //             });
+    //             const { recording } = await Audio.Recording.createAsync(Audio.RecordingOptionsPresets.HIGH_QUALITY);
+    //             setRecording(recording);
+    //         }
+    //     } catch (e) {
+    //         console.error('Didnt record!!!!', e);
+    //         return;
+    //     }
+    //  };
+    // const stopRecording = async () => { 
+    //     setRecording(undefined);
+    //     await recording.stopAndUnloadAsync();
+    //     let allrecordings = [...recordings];
+    //     const { sound, status } = await recording.createNewLoadedSoundAsync();
+
+    //     const base64Uri = await FileSystem.readAsStringAsync(recording.getURI(), {
+    //         encoding: FileSystem.EncodingType.Base64,
+    //     });
+    //     const audioConfig = {
+    //         encoding: Platform.OS === 'ios' ? 'LINEAR16' : 'AMR_WB',
+    //         sampleRateHerrtz: Platform.OS === 'ios' ? 44100 : 16000,
+    //         languageCode: 'en-US',
+    //     };
+
+
+    //     allrecordings.push({
+    //         sound: sound,
+    //         duration: getDuractionFormatted(status.durationMillis),
+    //         file: recording.getURI(),
+    //         body: JSON.stringify({
+    //             audioUrl: base64Uri,
+    //             config: audioConfig,
+    //         })
+    //     });
+
+    //     setRecordings(allrecordings);
+    //     await Audio.setAudioModeAsync({
+    //         allowsRecordingIOS: false,
+    //         playsInSilentModeIOS: false,
+    //     });
+
+       
+    //     // console.log('BASE64',base64Uri)
+
+    // };
+    // const getDuractionFormatted = (milliseconds: any) => {
+    //     const minutes = milliseconds / 1000 / 60;
+    //     const seconds = Math.round((minutes - Math.floor(minutes)) * 60);
+    //     return seconds < 10 ? `${Math.floor(minutes)}:0${seconds}` : `${Math.floor(minutes)}:${seconds} `;
+    //  };
+    // const getRecordingLines = () => { 
+    //     return recordings.map((recordingLines:any,index:any) => {
+    //         return (
+    //             <View key={index}>
+    //                 <Text>
+    //                     Recording #{index + 1} | {recordingLines.duration}
+    //                 </Text>
+    //                 <Button title={'play'} onPress={() => recordingLines.sound.replayAsync()}></Button>
+    //             </View>
+    //         )
+    //     });
+    // };
+    // const clearRecordingLines = () => {
+    //     setRecordings([]);
+    // };
+
+    // console.log('AAAAAAAAAAAAAAAAAAAAAAA', recordings)
 
     return (
         <SafeAreaView className='bg-background h-full'>
@@ -54,6 +137,13 @@ const Search = () => {
                     >
                         {isRecording ? <ActivityIndicator size='small' color={'white'}></ActivityIndicator> :<Ionicons name="mic" size={36} color="white" />}
                     </Pressable>
+                    {/* <Button title={recording ? 'Stop Recording' : 'Start Recording'}
+                        onPress={recording ? stopRecording : startRecording}
+                    ></Button>
+                    {getRecordingLines()}
+                    <Button title={recordings.length > 0 ? 'Clear Recordings' : ''}
+                        onPress={clearRecordingLines}
+                    ></Button> */}
                 </View>
             </ScrollView>
         </SafeAreaView>

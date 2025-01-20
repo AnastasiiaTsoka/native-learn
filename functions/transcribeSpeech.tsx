@@ -20,6 +20,9 @@ export const transcribSpeech = async (audioRecordingRef: MutableRefObject<Audio.
             encoding: FileSystem.EncodingType.Base64,
         });
 
+        console.log('RECORDING', recordingUri)
+        console.log('base64Uri', base64Uri)
+
         if (recordingUri && base64Uri) {
             const audioConfig = {
                 encoding: Platform.OS === 'ios' ? 'LINEAR16' : 'AMR_WB',
@@ -30,7 +33,7 @@ export const transcribSpeech = async (audioRecordingRef: MutableRefObject<Audio.
             const serverUrl = Platform.OS === 'android' ?
                 '10.0.2.2' : Device.isDevice
                 ? process.env.LOCAL_DEV_IP || 'localhost'
-                : 'localhost';
+                    : 'localhost';
 
             const serverResponse = await fetch(`${serverUrl}`, {
                 method: 'POST',
@@ -46,6 +49,7 @@ export const transcribSpeech = async (audioRecordingRef: MutableRefObject<Audio.
                 .catch((e) => console.error(e));
             
             const result = serverResponse?.result || [];
+            console.log('result',result)
             if (result) {
                 const transcript = result?.[0].alternatives?.[0].transcript;
                 if (!transcript) {
@@ -67,12 +71,5 @@ export const transcribSpeech = async (audioRecordingRef: MutableRefObject<Audio.
         return undefined;
     }
 
-    
-
-    try {
-       
-    } catch (e) {
-
-    }
 };
 
